@@ -13,7 +13,7 @@ export const DeviceFrameWrapper: React.FC<DeviceFrameWrapperProps> = ({ children
   // If in responsive / full screen mode
   if (settings.viewMode === 'responsive') {
     return (
-      <div className="h-[100dvh] w-full bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors overflow-hidden">
+      <div className="h-full min-h-screen w-full bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 flex flex-col font-sans transition-colors overflow-hidden">
         <div className="w-full max-w-xl mx-auto flex-1 flex flex-col shadow-xs bg-white dark:bg-zinc-900 border-x border-zinc-200/60 dark:border-zinc-800/60 h-full overflow-hidden relative">
           {children}
         </div>
@@ -23,7 +23,7 @@ export const DeviceFrameWrapper: React.FC<DeviceFrameWrapperProps> = ({ children
 
   // Mobile Device Simulated Frame (Responsive on phones; sleek mobile frame on desktop)
   return (
-    <div className="h-[100dvh] w-full bg-zinc-100/90 dark:bg-zinc-950/90 py-0 sm:py-3 px-0 sm:px-4 flex flex-col items-center justify-center transition-colors overflow-hidden">
+    <div className="h-full min-h-screen w-full bg-zinc-100/90 dark:bg-zinc-950/90 py-0 sm:py-3 px-0 sm:px-4 flex flex-col items-center justify-center transition-colors overflow-hidden">
       {/* Top Toggle Toolbar on desktop only */}
       <div className="hidden sm:flex mb-2 shrink-0 items-center gap-2 text-xs text-zinc-500 dark:text-zinc-400 bg-white dark:bg-zinc-900 px-3.5 py-1 rounded-full border border-zinc-200/80 dark:border-zinc-800 shadow-xs">
         <Smartphone size={13} className="text-emerald-500" />
@@ -59,7 +59,7 @@ export const DeviceFrameWrapper: React.FC<DeviceFrameWrapperProps> = ({ children
       </div>
 
       {/* Screen Container: On phones fills 100% viewport; on desktop acts as a sleek mock frame */}
-      <div className="w-full sm:max-w-[420px] h-[100dvh] sm:h-[840px] bg-white dark:bg-zinc-900 sm:rounded-[40px] sm:shadow-2xl sm:border sm:border-zinc-200/80 dark:sm:border-zinc-800 flex flex-col overflow-hidden relative transition-all">
+      <div className="w-full sm:max-w-[420px] h-full sm:h-[840px] max-h-screen sm:max-h-[840px] bg-white dark:bg-zinc-900 sm:rounded-[40px] sm:shadow-2xl sm:border sm:border-zinc-200/80 dark:sm:border-zinc-800 flex flex-col overflow-hidden relative transition-all">
         {/* iOS Dynamic Island / Notch on desktop simulator */}
         <div className="hidden sm:flex absolute top-2.5 left-1/2 -translate-x-1/2 z-50 items-center justify-center pointer-events-none">
           {deviceModel === 'iphone' ? (

@@ -14,53 +14,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     <meta name="apple-mobile-web-app-title" content="Paisa Tracker" />
-
-    <!-- Anti-Hosting-Badge Script: Strips out Netlify floating deploy-preview drawer, feedback widgets, or badges -->
-    <script>
-      (function() {
-        function removeHostingBadges() {
-          var badSelectors = [
-            '[data-netlify-deploy-preview-badge]',
-            '#netlify-drawer',
-            '#netlify-identity-widget',
-            'iframe[src*="netlify"]',
-            'div[class*="netlify"]',
-            'div[id*="netlify"]',
-            '.netlify-badge',
-            '[aria-label*="Netlify"]',
-            '[class*="netlify-drawer"]',
-            '#vercel-toolbar',
-            '[data-vercel-toolbar]'
-          ];
-          badSelectors.forEach(function(sel) {
-            try {
-              document.querySelectorAll(sel).forEach(function(el) {
-                if (el && el.parentNode) el.parentNode.removeChild(el);
-              });
-            } catch (e) {}
-          });
-          try {
-            document.querySelectorAll('div, a, span, button').forEach(function(el) {
-              if (el && el.textContent && el.textContent.toLowerCase().indexOf('netlify') !== -1) {
-                var pos = window.getComputedStyle(el).position;
-                if (pos === 'fixed' || pos === 'absolute') {
-                  if (el.parentNode) el.parentNode.removeChild(el);
-                }
-              }
-            });
-          } catch (e) {}
-        }
-        window.addEventListener('DOMContentLoaded', removeHostingBadges);
-        window.addEventListener('load', removeHostingBadges);
-        if (typeof MutationObserver !== 'undefined') {
-          var obs = new MutationObserver(removeHostingBadges);
-          obs.observe(document.documentElement, { childList: true, subtree: true });
-        }
-      })();
-    </script>
   </head>
-  <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 overflow-hidden select-none">
-    <div id="root" class="h-full w-full"></div>
+  <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 antialiased selection:bg-emerald-500/20">
+    <div id="root" class="min-h-screen w-full flex flex-col"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
