@@ -20,7 +20,11 @@ const STORAGE_KEYS = {
 
 class StorageRepository {
   private isBrowser(): boolean {
-    return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined';
+    try {
+      return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined' && window.localStorage !== null;
+    } catch {
+      return false;
+    }
   }
 
   constructor() {
