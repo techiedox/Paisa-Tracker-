@@ -67,6 +67,9 @@ html.dark body {
    Prevents Netlify Deploy Preview / feedback drawers from
    blocking bottom navigation or floating over UI
    ========================================================= */
+body > *:not(#root):not(script):not(style),
+netlify-deploy-preview-badge,
+netlify-drawer,
 [data-netlify-deploy-preview-badge],
 #netlify-identity-widget,
 #netlify-drawer,
@@ -74,8 +77,9 @@ iframe[src*="netlify"],
 div[class*="netlify"],
 div[id*="netlify"],
 .netlify-badge,
-[aria-label*="Netlify"],
+[aria-label*="Netlify" i],
 [class*="netlify-drawer"],
+[id*="netlify" i],
 #vercel-toolbar,
 [data-vercel-toolbar] {
   display: none !important;
