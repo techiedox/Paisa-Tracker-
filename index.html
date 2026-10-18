@@ -2,21 +2,65 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PaisaTrack - Personal Finance & Expense Tracker</title>
-    <meta name="description" content="Production-ready personal finance app to track income, expenses, monthly budgets, savings goals, and spending analytics with offline-first persistence." />
-    <meta property="og:title" content="PaisaTrack - Personal Finance & Expense Tracker" />
-    <meta property="og:description" content="Production-ready personal finance app to track income, expenses, monthly budgets, savings goals, and spending analytics with offline-first persistence." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <title>Paisa Tracker - Simple & Private Expense Tracker</title>
+    <meta name="description" content="Simple, fast, and 100% private expense tracker that stores all financial data on your local device." />
+    <meta property="og:title" content="Paisa Tracker - Simple & Private Expense Tracker" />
+    <meta property="og:description" content="Simple, fast, and 100% private expense tracker that stores all financial data on your local device." />
     <meta property="og:type" content="website" />
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%2310B981'/%3E%3Cpath d='M12 28V12H21C23.8 12 26 14.2 26 17C26 19.8 23.8 22 21 22H12' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M10 17H25' stroke='white' stroke-width='2.8' stroke-linecap='round'/%3E%3Cpath d='M21 27L25 23L29 27L33 21' stroke='%23A7F3D0' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='33' cy='21' r='1.5' fill='%23A7F3D0'/%3E%3C/svg%3E" />
-    <meta name="theme-color" content="#10B981" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1E2C44" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="PaisaTrack" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Paisa Tracker" />
+
+    <!-- Anti-Hosting-Badge Script: Strips out Netlify floating deploy-preview drawer, feedback widgets, or badges -->
+    <script>
+      (function() {
+        function removeHostingBadges() {
+          var badSelectors = [
+            '[data-netlify-deploy-preview-badge]',
+            '#netlify-drawer',
+            '#netlify-identity-widget',
+            'iframe[src*="netlify"]',
+            'div[class*="netlify"]',
+            'div[id*="netlify"]',
+            '.netlify-badge',
+            '[aria-label*="Netlify"]',
+            '[class*="netlify-drawer"]',
+            '#vercel-toolbar',
+            '[data-vercel-toolbar]'
+          ];
+          badSelectors.forEach(function(sel) {
+            try {
+              document.querySelectorAll(sel).forEach(function(el) {
+                if (el && el.parentNode) el.parentNode.removeChild(el);
+              });
+            } catch (e) {}
+          });
+          try {
+            document.querySelectorAll('div, a, span, button').forEach(function(el) {
+              if (el && el.textContent && el.textContent.toLowerCase().indexOf('netlify') !== -1) {
+                var pos = window.getComputedStyle(el).position;
+                if (pos === 'fixed' || pos === 'absolute') {
+                  if (el.parentNode) el.parentNode.removeChild(el);
+                }
+              }
+            });
+          } catch (e) {}
+        }
+        window.addEventListener('DOMContentLoaded', removeHostingBadges);
+        window.addEventListener('load', removeHostingBadges);
+        if (typeof MutationObserver !== 'undefined') {
+          var obs = new MutationObserver(removeHostingBadges);
+          obs.observe(document.documentElement, { childList: true, subtree: true });
+        }
+      })();
+    </script>
   </head>
-  <body>
-    <div id="root"></div>
+  <body class="bg-zinc-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 overflow-hidden select-none">
+    <div id="root" class="h-full w-full"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
-

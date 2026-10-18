@@ -17,15 +17,18 @@ import { SettingsView } from './components/settings/SettingsView';
 import { CategoryManagementView } from './components/categories/CategoryManagementView';
 import { TransactionFormModal } from './components/transactions/TransactionFormModal';
 import { WelcomeOnboardingModal } from './components/onboarding/WelcomeOnboardingModal';
+import { InstallAppButton } from './components/common/InstallAppButton';
 
 const AppContent: React.FC = () => {
   const { activeTab } = useFinance();
 
   return (
     <DeviceFrameWrapper>
+      {/* 100% Fixed Non-Moving Header */}
       <AppHeader />
       
-      <main className="flex-1 w-full max-w-4xl mx-auto">
+      {/* Smoothly Scrollable Center Area */}
+      <main className="flex-1 w-full max-w-4xl mx-auto overflow-y-auto overflow-x-hidden min-h-0 relative">
         {activeTab === 'dashboard' && <DashboardView />}
         {activeTab === 'transactions' && <TransactionListView />}
         {activeTab === 'budgets' && <BudgetView />}
@@ -35,7 +38,13 @@ const AppContent: React.FC = () => {
         {activeTab === 'categories' && <CategoryManagementView />}
       </main>
 
+      {/* Floating 1-Click Download Web App Button at bottom right corner */}
+      <InstallAppButton />
+
+      {/* 100% Fixed Non-Moving Bottom Navigation */}
       <BottomNav />
+
+      {/* Modals */}
       <TransactionFormModal />
       <WelcomeOnboardingModal />
     </DeviceFrameWrapper>

@@ -28,21 +28,22 @@ export const AppHeader: React.FC = () => {
   const [showNotifications, setShowNotifications] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border-b border-zinc-100 dark:border-zinc-800/70 transition-colors">
-      <div className="w-full px-4 py-3 flex items-center justify-between">
+    <header className="shrink-0 w-full z-30 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80 shadow-2xs transition-colors select-none">
+      <div className="w-full px-4 py-2.5 flex items-center justify-between max-w-4xl mx-auto">
         {/* Brand Logo & Local Storage indicator */}
         <div className="flex items-center gap-2.5">
-          <AppLogo size={34} />
+          <AppLogo size={36} />
           <div>
             <div className="flex items-center gap-1.5">
-              <h1 className="text-sm font-extrabold text-zinc-900 dark:text-zinc-100 tracking-tight">
-                PaisaTrack
+              <h1 className="text-sm font-black tracking-tight leading-none">
+                <span className="text-[#C99E58] dark:text-[#E0B870]">Paisa</span>{' '}
+                <span className="text-[#1E2C44] dark:text-zinc-100">Tracker</span>
               </h1>
               <span className="inline-flex items-center gap-0.5 text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-950/60 text-emerald-700 dark:text-emerald-400 border border-emerald-200/50 dark:border-emerald-800/50">
                 <ShieldCheck size={10} /> Local
               </span>
             </div>
-            <div className="flex items-center gap-1 text-[11px] text-zinc-400 mt-0.5">
+            <div className="flex items-center gap-1 text-[11px] text-zinc-400 mt-1">
               <Calendar size={11} className="text-zinc-400" />
               <span>{getMonthDisplayName(currentMonth)}</span>
             </div>

@@ -14,7 +14,6 @@ import {
   Sliders,
   FileSpreadsheet,
   HardDrive,
-  FolderArchive,
 } from 'lucide-react';
 import { useFinance } from '../../context/FinanceContext';
 import { CurrencyCode, NumberFormatType, DateFormatType, ThemeMode } from '../../types';
@@ -312,16 +311,6 @@ export const SettingsView: React.FC = () => {
             className="hidden"
           />
         </div>
-
-        {/* 1-Click Complete Codebase ZIP Download */}
-        <a
-          href="/paisatrack-codebase.zip"
-          download="paisatrack-codebase.zip"
-          className="w-full py-2.5 px-3 rounded-xl border border-emerald-500/40 bg-emerald-50/70 dark:bg-emerald-950/40 text-emerald-800 dark:text-emerald-300 text-xs font-bold flex items-center justify-center gap-1.5 hover:bg-emerald-100 dark:hover:bg-emerald-900/40 transition-colors cursor-pointer text-center"
-        >
-          <FolderArchive size={14} className="text-emerald-600 dark:text-emerald-400" />
-          <span>Download Whole Project (.ZIP)</span>
-        </a>
 
         <div className="pt-2 border-t border-zinc-100 dark:border-zinc-800 flex gap-2">
           <button

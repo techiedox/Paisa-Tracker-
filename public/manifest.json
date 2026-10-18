@@ -1,0 +1,17 @@
+{
+  "short_name": "Paisa Tracker",
+  "name": "Paisa Tracker - Simple & Private Expense Tracker",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#1E2C44",
+  "theme_color": "#1E2C44",
+  "display": "standalone",
+  "orientation": "portrait"
+}

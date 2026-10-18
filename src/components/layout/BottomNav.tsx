@@ -12,7 +12,7 @@ export const BottomNav: React.FC = () => {
   const { activeTab, setActiveTab, openTransactionModal } = useFinance();
 
   return (
-    <nav className="sticky sm:fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200/80 dark:border-zinc-800/80 py-2 px-4 pb-safe select-none">
+    <nav className="shrink-0 w-full z-30 bg-white/95 dark:bg-zinc-900/95 backdrop-blur-md border-t border-zinc-200/80 dark:border-zinc-800/80 py-2 px-4 pb-safe select-none shadow-lg transition-colors">
       <div className="max-w-md mx-auto flex items-center justify-between relative">
         {/* Home */}
         <button
